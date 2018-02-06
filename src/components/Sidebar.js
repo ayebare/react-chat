@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Rooms from '../components/Rooms'
+import RoomPicker from './RoomPicker'
 
 const Sidebar = ({ users }) => (
-  <Rooms />
   <aside id="sidebar" className="sidebar">
+	<RoomPicker />
     <ul>
       {users.map(user => (
         <li key={user.id}>{user.name}</li>

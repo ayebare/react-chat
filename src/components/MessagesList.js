@@ -1,19 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Message from './Message'
+import base from '../base'
 
-const MessagesList = ({ messages }) => (
-  <section id="messages-list">
-    <ul>
-      {messages.map(message => (
-        <Message
-          key={message.id}
-          {...message}
-        />
-    ))}
-    </ul>
-  </section>
-)
+class  MessagesList extends React.Component {
+	
+	constructor() {
+		super();
+	}
+
+	render () {
+		return ( 
+		<section id="messages-list">
+			<ul>
+				{this.props.messages.map(message => (
+					<Message
+						key={message.id}
+						{...message}
+					/>
+				))}
+			</ul>
+		</section>
+		)
+	}
+}
+
 
 MessagesList.propTypes = {
   messages: PropTypes.arrayOf(PropTypes.shape({
